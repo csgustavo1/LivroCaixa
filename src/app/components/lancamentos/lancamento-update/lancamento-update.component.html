@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-title>Atualizar Transação</mat-card-title>
+    <p-messages></p-messages>
+    <form #form="ngForm" *ngIf="data" (ngSubmit)="update(form)">
+        <mat-form-field>
+            <input for="title" id="title" matInput placeholder="Título"
+                  [(ngModel)]="data.title" name="title" value="title" readonly="true">
+        </mat-form-field>
+        <mat-form-field>
+            <input  for="type" id="type" matInput placeholder="Tipo"
+            [(ngModel)]="data.type" name="type">
+        </mat-form-field>
+        <mat-form-field>
+            <input  for="value" id="value" matInput placeholder="Valor (R$)"
+            [(ngModel)]="data.value" name="value">
+        </mat-form-field>
+
+        <button  mat-raised-button type="submit" color="primary">
+            Atualizar
+        </button>
+    </form>
+    
+    <button  mat-raised-button color="warn" (click)="cancel()">
+        cancelar
+    </button>
+</mat-card>
+
